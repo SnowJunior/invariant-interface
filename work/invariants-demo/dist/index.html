@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ec">
+  <meta name="description" content="Give agents freedom to implement. Be precise about what must remain true. An interactive Go workshop about interfaces, AGENTS.md, and behavioral contracts.">
+  <title>Invariants are the new interface — Invariant Lab</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23e9683f'/%3E%3Cpath d='M13 11H8v18h5m14-18h5v18h-5M17 20h6' fill='none' stroke='%23fff8e8' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./workshop.css">
+</head>
+<body>
+  <a class="skip-link" href="#lab">Skip to the workshop</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="Invariant Lab home"><span class="brand-mark" aria-hidden="true">[·]</span> INVARIANT LAB <span class="edition">/ EXPERIMENT 001</span></a>
+    <nav aria-label="Main navigation"><a href="#about">The idea <span aria-hidden="true">↗</span></a><button class="text-button" id="downloadHeader">Get AGENTS.md <span aria-hidden="true">↓</span></button></nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-labelledby="title">
+      <div><div class="eyebrow"><span class="orange-dot"></span> SMALL BOTS. BIG ASSUMPTIONS.</div><h1 id="title">Invariants are<br>the new <em>interface.</em></h1></div>
+      <div class="hero-note"><span class="note-line" aria-hidden="true"></span><p>Give agents freedom to implement.<br><strong>Be precise about what must remain true.</strong></p><p class="muted">Watch a Go package go sideways.<br>Then give the bots a contract.</p><a href="#lab" id="watchLink">Enter the workshop <span aria-hidden="true">↘</span></a></div>
+    </section>
+
+    <section class="lab" id="lab" aria-labelledby="labTitle">
+      <div class="lab-header"><div><div class="eyebrow">01 / THE WORKSHOP</div><h2 id="labTitle">Same interface. Different outcomes.</h2></div><button id="contractToggle" class="contract-toggle" aria-pressed="false"><span class="switch-track" aria-hidden="true"><span></span></span><span id="contractToggleText">Add AGENTS.md</span><span class="key-label" aria-hidden="true">.md</span></button></div>
+      <div class="lab-grid">
+        <div class="stage-column">
+          <div class="stage-heading"><span class="live-tag"><span></span> INTERACTIVE SIMULATION</span><span class="stage-path">demo / pkg / inventory</span></div>
+          <div id="workshop" class="workshop-host"></div>
+          <div class="scene-caption"><span class="scene-number" id="sceneNumber">01</span><div><strong id="sceneTitle">Meet your very confident team.</strong><p id="sceneDescription">The interface checks the shape. Who checks the behavior?</p></div><span id="modeBadge" class="mode-badge">NO CONTRACT</span></div>
+          <div class="playbar"><div class="playback"><button id="play" class="play-button" aria-label="Play simulation"><span id="playIcon" aria-hidden="true">▶</span> <span id="playLabel">Run demo</span></button><button id="step" class="icon-button" aria-label="Advance one step" title="Advance one step">↦</button><button id="restart" class="icon-button" aria-label="Restart same scenario" title="Restart same scenario">↺</button></div><div class="play-options"><label class="speed-label" for="speed">SPEED</label><select id="speed" aria-label="Playback speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select><span id="eventCount" class="event-count">READY</span></div></div>
+          <div class="progress-track" aria-hidden="true"><div id="progress"></div></div>
+        </div>
+        <aside class="contract-panel" aria-labelledby="contractHeading"><div class="file-heading"><span class="file-icon" aria-hidden="true">↳</span><h3 id="contractHeading">AGENTS.md</h3><span id="fileStatus" class="file-status">NOT ADDED</span></div><p id="contractIntro">A little context goes a long way.<br>Add the file. Make the promises explicit.</p><div id="ruleList" class="rule-list"></div><div class="contract-footer"><div><span id="guidanceDot" class="status-dot"></span><span id="guidanceStatus">Guidance absent</span></div><div><span id="checksDot" class="status-dot"></span><span id="checksStatus">Checks disabled</span></div><small>Instructions guide the bot.<br>Checks decide what gets accepted.</small></div></aside>
+      </div>
+    </section>
+
+    <section class="underbench" aria-label="Code and verification evidence">
+      <div class="code-panel"><div class="code-toolbar"><div class="code-tabs" role="tablist" aria-label="Code view"><button role="tab" id="tabProposal" aria-selected="true" data-tab="proposal">Proposed change</button><button role="tab" id="tabAccepted" aria-selected="false" data-tab="accepted">Accepted code</button><button role="tab" id="tabAgents" aria-selected="false" data-tab="agents">AGENTS.md</button></div><span id="codeBadge" class="code-badge">GO</span></div><div class="code-filename" id="codeFilename">pkg/inventory/inventory.go <span>• proposed</span></div><pre id="codePanel" role="tabpanel" aria-labelledby="tabProposal" tabindex="0"><code id="sourceCode"></code></pre><div class="code-footnote"><span class="tiny-check">✓</span> <span id="typeNote">All example implementations satisfy Inventory.</span><span class="sim-label">SIMULATED</span></div></div>
+      <div class="evidence-panel"><div class="eyebrow">THE RECEIPTS</div><div class="evidence-title"><h3 id="evidenceTitle">A signature isn’t a promise.</h3><span id="evidenceIcon" aria-hidden="true">↗</span></div><p id="evidenceDetail">Reserve(qty int) error tells us how to call it. It doesn’t say whether stock can go below zero.</p><div class="evidence-values"><div><span>BEFORE</span><strong id="beforeValue">5</strong></div><div><span>REQUEST</span><strong id="requestValue">8</strong></div><div><span>AFTER</span><strong id="afterValue">—</strong></div></div><div id="resultMessage" class="result-message">Waiting for the first proposal.</div><div id="eventLog" class="event-log" aria-label="Recent activity"></div></div>
+    </section>
+
+    <details class="explore" id="explore"><summary><span><span class="small-cross" aria-hidden="true">+</span> Take the controls</span><span class="explore-hint">Break a rule. Try a request. Test the contract.</span><span class="summary-arrow" aria-hidden="true">↗</span></summary><div class="explore-body"><div class="experiment-block"><div class="eyebrow">TRY THE ACCEPTED CODE</div><label for="quantity">Reserve a quantity <span id="liveStock">Stock: 5</span></label><div class="input-row"><input id="quantity" type="number" min="-20" max="20" step="1" value="8"><button id="tryRequest" class="small-button">Run request ↗</button></div><button id="resetStock" class="text-button small">Reset stock to 5</button><p id="requestFeedback">Operations use the accepted implementation.</p></div><div class="experiment-block"><div class="eyebrow">MAKE A BAD PROPOSAL</div><label for="defect">Choose a shortcut</label><select id="defect"><option value="unchecked">“Who needs validation?”</option><option value="mutates">Change stock, then return an error</option><option value="offbyone">An innocent off-by-one</option><option value="rejectall">Reject absolutely everything</option></select><button id="inject" class="small-button secondary">Send reckless patch ↗</button></div><div class="experiment-block"><div class="eyebrow">GUIDANCE ≠ ENFORCEMENT</div><label class="check-row"><input id="guidanceToggle" type="checkbox"> Agent reads AGENTS.md</label><label class="check-row"><input id="checksToggle" type="checkbox"> Gate checks proposed changes</label><p>Turn checks off with the file still present. A written instruction alone can’t block a bad patch.</p></div><div class="experiment-block preferences"><div class="eyebrow">THE CAST & THE COMEDY</div><label for="skin">Agent appearance</label><select id="skin"><option value="orange">Terminal bot · orange</option><option value="mint">Digital pet · mint</option></select><div class="preference-row"><label class="check-row"><input id="slapstick" type="checkbox" checked> Slapstick</label><label class="check-row"><input id="sound" type="checkbox"> Sound</label></div><label class="check-row"><input id="motion" type="checkbox"> Reduce motion</label></div></div></details>
+
+    <section class="explanation" id="about" aria-labelledby="ideaTitle"><div class="explanation-intro"><div class="eyebrow">02 / THE IDEA</div><h2 id="ideaTitle">The implementation can change.<br><em>The promises shouldn’t.</em></h2></div><div class="idea-columns"><article><span class="idea-number">01</span><h3>The interface</h3><p>Go checks that the methods exist with the right signatures. An implementation can pass that check and still get the behavior wrong.</p><code>Reserve(qty int) error</code></article><article><span class="idea-number">02</span><h3>The instructions</h3><p>Put package-specific invariants in <code>AGENTS.md</code>. Give agents the context they need before they start making changes.</p><code>Stock must never be negative.</code></article><article><span class="idea-number">03</span><h3>The evidence</h3><p>Turn those promises into tests. Reject failing proposals, explain what broke, and let the agent find a valid implementation.</p><code>Write it. Check it. Keep it true.</code></article></div><div class="takeaway"><p>A Markdown file is a conversation.<br><strong>A passing check is evidence.</strong></p><button id="download" class="download-button">Take the contract with you <span aria-hidden="true">↓</span></button></div></section>
+    <noscript><section class="noscript"><h2>The lesson without the animation</h2><p>A Go method can satisfy <code>Reserve(qty int) error</code> while blindly subtracting quantity, allowing stock to become negative. AGENTS.md documents the intended rules. Tests must check invalid quantities and preserve stock on failure. Enable JavaScript to run the interactive example.</p></section></noscript>
+  </main>
+  <footer class="site-footer wrap"><span class="brand small"><span class="brand-mark" aria-hidden="true">[·]</span> BUILT AROUND A PROMISE.</span><span>Original characters. Scripted agents. Real engineering ideas.</span><div><a href="https://go.dev/ref/spec#Interface_types" target="_blank" rel="noreferrer">Go interfaces ↗</a><a href="https://agents.md/" target="_blank" rel="noreferrer">AGENTS.md ↗</a></div></footer>
+  <p class="sr-only" id="announcer" role="status" aria-live="polite" aria-atomic="true"></p>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

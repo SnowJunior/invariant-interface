@@ -1,0 +1,119 @@
+.workshop{--bot:#dd9b73;--bot-highlight:#f2ba8d;--bot-limb:#d3936d;position:relative;isolation:isolate;overflow:hidden;background:#1d2422}
+.workshop-svg{display:block;width:100%;height:auto;aspect-ratio:1000/450;overflow:hidden}
+.workshop-svg text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#d7d9c8}
+.workshop .workshop-caption{font-size:11px;letter-spacing:.3px}
+.workshop .caption-dim{font-size:9px;letter-spacing:1.3px;fill:#929e8d}
+.workshop .floor-line{stroke:#4c594b;stroke-width:1}
+.workshop .floor-line-secondary{opacity:.4}
+.workshop .station-label{font-size:10px;letter-spacing:1.3px;fill:#b0b6a0}
+.workshop .station-label text{fill:#b0b6a0}
+.workshop .machine-case{fill:#485249;stroke:#75806d;stroke-width:1}
+.workshop .screen-filename{font-size:8px;fill:#a0b29d}
+.workshop .monitor-code{font-size:10px}
+.workshop .monitor-code text{fill:#d2d6bb}
+.workshop .code-purple{fill:#c6a7c6}
+.workshop .code-gold{fill:#d6be83}
+.workshop .monitor-cursor{animation:iw-cursor 1.2s steps(1) infinite}
+.workshop .type-heading{font-size:9px;letter-spacing:1.6px;fill:#b7c3a7}
+.workshop .type-signature{font-size:11px;fill:#d8d9bc}
+.workshop .type-stamp{fill:#a8c59a;stroke:#d4deba}
+.workshop .stamp-label{font-size:10px;letter-spacing:1px;fill:#253b25}
+.workshop .gate-arch{stroke:#5b6b59}
+.workshop .gate-light{fill:#a59e7f}
+.workshop .gate-status{font-size:9px;fill:#b8bea5;letter-spacing:.3px}
+.workshop .gate-beams{fill:none;stroke:#b2d49f;stroke-width:1;opacity:0}
+.workshop .gate-bar{transform-origin:717px 238px;transition:transform .4s ease}
+.workshop .guidance-sheet text{font-size:8px;fill:#3e5a3e}
+.workshop .guidance-empty text{font-size:24px;fill:#7d8e79}
+.workshop .package-label>text{font-size:9px;letter-spacing:1.3px;fill:#8f9f89}
+.workshop .package-label .task-label{font-size:11px;letter-spacing:0;fill:#cbd4bd}
+.workshop .stock-number{font-size:26px;font-weight:600;fill:#c1d4ab}
+.workshop .zero-label{font-size:10px;fill:#9ba58f}
+.workshop .stock-ghost{fill:#27332a;stroke:#4e604c;stroke-dasharray:3 3}
+.workshop .stock-block{fill:#9eb98d;stroke:#c3d3aa;stroke-width:1}
+.workshop .debt-block{fill:#d87561;stroke:#eea38c;stroke-width:1}
+.workshop .stock-caption{font-size:9px;fill:#aab79d}
+.workshop.stock-negative .stock-number,.workshop.stock-negative .stock-caption{fill:#efaa90}
+.workshop .bot-shadow{fill:#101a12;opacity:.5}
+.workshop .bot-puppet{transform-box:fill-box;transform-origin:center;transform:scale(var(--bot-scale));animation:iw-breathe 2.8s ease-in-out infinite}
+.workshop .bot-body,.workshop .bot-ear{fill:var(--bot);stroke:#efb38a;stroke-width:1}
+.workshop .bot-highlight{stroke:var(--bot-highlight);stroke-width:2;stroke-linecap:round}
+.workshop .bot-backpack{fill:#6f7963;stroke:#abb295;stroke-width:1}
+.workshop .bot-backpack-strap{stroke:#414c3d;stroke-width:2}
+.workshop .bot-leg,.workshop .bot-arm{fill:none;stroke:var(--bot-limb);stroke-width:6;stroke-linecap:square;stroke-linejoin:round}
+.workshop .bot-arm{transform-box:fill-box;transform-origin:top center}
+.workshop .bot-finger{stroke-width:3}
+.workshop .bot-eyes{fill:#302d28;transform-box:fill-box;transform-origin:center;animation:iw-blink 5s linear infinite}
+.workshop .bot-mouth{stroke:#6b4939;stroke-width:2;stroke-linecap:round}
+.workshop .bot-improver{--bot:#aab39b;--bot-limb:#929f85;--bot-highlight:#d0d3b6}
+.workshop .bot-checker{--bot:#b1c894;--bot-limb:#91ad75;--bot-highlight:#dce4b8}
+.workshop .bot-improver .bot-eyes{animation-delay:1.7s}
+.workshop .bot-checker .bot-eyes{animation-delay:3.1s}
+.workshop .carried-code{opacity:0}
+.workshop .carried-code rect{fill:#e1d5b4;stroke:#9a8e70}
+.workshop .carried-code text{font-size:15px;fill:#5c6049}
+.workshop .speech-panel{fill:#e8e4ce;stroke:#f5eed6;stroke-width:1}
+.workshop .speech-text{fill:#2e392d;font-size:12px;font-weight:600}
+.workshop .speech{pointer-events:none}
+.workshop .correction-rig{opacity:0;pointer-events:none}
+.workshop .celebration-particles{opacity:0;pointer-events:none}
+.workshop .moving-patch{opacity:.5}
+.workshop[data-skin=mint]{--bot:#9bc9b0;--bot-limb:#86b49b;--bot-highlight:#d2e7cb}
+.workshop[data-skin=mint] .bot-builder .bot-body{rx:17px;stroke:#c5e4c8}
+.workshop[data-skin=mint] .bot-builder .bot-ear{rx:4px;stroke:#c5e4c8}
+.workshop[data-skin=mint] .bot-builder .bot-mouth{stroke:#47785d}
+.workshop[data-protected=true] .gate-arch{stroke:#a0b88b}
+.workshop[data-protected=true] .gate-light{fill:#b4d59c}
+.workshop[data-protected=true] .gate-beams{opacity:.27}
+.workshop[data-protected=false] .gate-bar{transform:rotate(-80deg)}
+.workshop[data-pose=walking] .bot-builder .carried-code{opacity:1}
+.workshop[data-pose=walking] .bot-builder .leg-left,.workshop[data-pose=compiling] .bot-improver .leg-left{animation:iw-leg .28s ease-in-out infinite alternate;transform-origin:0 15px}
+.workshop[data-pose=walking] .bot-builder .leg-right,.workshop[data-pose=compiling] .bot-improver .leg-right{animation:iw-leg .28s ease-in-out infinite alternate-reverse;transform-origin:0 15px}
+.workshop[data-pose=typing] .bot-builder .arm-right,.workshop[data-pose=repairing] .bot-builder .arm-right{animation:iw-type .22s ease-in-out infinite alternate}
+.workshop[data-pose=typing] .bot-builder .arm-left,.workshop[data-pose=repairing] .bot-builder .arm-left{animation:iw-type .3s ease-in-out infinite alternate-reverse}
+.workshop[data-pose=compiling] .type-stamp{animation:iw-stamp .65s ease-in-out infinite alternate}
+.workshop[data-pose=compiling] .moving-patch,.workshop[data-pose=checking] .moving-patch{animation:iw-conveyor 2.4s linear infinite;opacity:1}
+.workshop[data-pose=compiling] .conveyor-teeth,.workshop[data-pose=checking] .conveyor-teeth{animation:iw-teeth .4s linear infinite}
+.workshop[data-pose=chaos] .bot-builder .bot-eyes rect{height:15px;y:-11px}
+.workshop[data-pose=chaos] .bot-builder .bot-puppet{animation:iw-startle .7s ease-in-out infinite}
+.workshop[data-pose=chaos] .debt-blocks{animation:iw-debt .55s ease-out both}
+.workshop[data-pose=reading] .guidance-sheet{animation:iw-paper 1.8s ease-in-out infinite}
+.workshop[data-pose=checking] .gate-beams{animation:iw-scan 1.5s ease-in-out infinite}
+.workshop[data-pose=rejected] .gate-arch,.workshop[data-pose=bonk] .gate-arch{stroke:#ce8d70}
+.workshop[data-pose=rejected] .gate-light,.workshop[data-pose=bonk] .gate-light{fill:#eda387}
+.workshop[data-pose=rejected] .gate-status,.workshop[data-pose=bonk] .gate-status{fill:#efb69c}
+.workshop[data-pose=rejected] .gate-beams,.workshop[data-pose=bonk] .gate-beams{stroke:#d78f72;opacity:.55}
+.workshop[data-pose=bonk] .correction-rig{opacity:1}
+.workshop[data-pose=bonk] .foam-paddle{transform-origin:780px 241px;animation:iw-paddle .8s ease-in-out both}
+.workshop[data-pose=bonk] .impact-lines{animation:iw-impact .8s steps(1) both}
+.workshop[data-pose=bonk] .bot-builder .bot-puppet{animation:iw-bonk .8s ease-in-out both}
+.workshop[data-pose=bonk] .bot-builder .bot-shadow{opacity:0}
+.workshop[data-pose=bonk] .speech-panel{fill:#efd49a;stroke:#fff0bc}
+.workshop[data-pose=bonk] .speech-text{font-size:21px!important;letter-spacing:2px}
+.workshop[data-pose=accepted] .gate-bar,.workshop[data-pose=celebrating] .gate-bar{transform:rotate(-80deg)}
+.workshop[data-pose=accepted] .gate-beams,.workshop[data-pose=celebrating] .gate-beams{opacity:.12}
+.workshop[data-pose=accepted] .bot-checker .arm-left,.workshop[data-pose=celebrating] .bot-builder .arm-left{transform:rotate(140deg)}
+.workshop[data-pose=celebrating] .bot-builder .arm-right{transform:rotate(-140deg)}
+.workshop[data-pose=celebrating] .bot-builder .bot-puppet{animation:iw-celebrate .8s ease-in-out infinite}
+.workshop[data-pose=celebrating] .celebration-particles{opacity:1;animation:iw-confetti 1.8s ease-out infinite}
+.workshop.is-paused *{animation-play-state:paused!important;transition:none!important}
+.workshop.motion-reduced *{animation:none!important;transition:none!important}
+.workshop.motion-reduced .correction-rig{display:none}
+@keyframes iw-cursor{50%{opacity:0}}
+@keyframes iw-blink{0%,43%,47%,100%{transform:scaleY(1)}45%{transform:scaleY(.13)}}
+@keyframes iw-breathe{0%,100%{transform:scale(var(--bot-scale)) translateY(0)}50%{transform:scale(var(--bot-scale)) translateY(-2px)}}
+@keyframes iw-leg{from{transform:rotate(-10deg)}to{transform:rotate(10deg)}}
+@keyframes iw-type{from{transform:rotate(-14deg)}to{transform:rotate(-58deg)}}
+@keyframes iw-stamp{from{transform:translateY(0)}to{transform:translateY(7px)}}
+@keyframes iw-conveyor{from{transform:translateX(0)}to{transform:translateX(290px)}}
+@keyframes iw-teeth{to{stroke-dashoffset:-19}}
+@keyframes iw-startle{0%,100%{transform:translateY(0) rotate(0)}35%{transform:translateY(-5px) rotate(-3deg)}65%{transform:rotate(3deg)}}
+@keyframes iw-debt{from{transform:translateY(-22px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes iw-paper{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes iw-scan{0%,100%{opacity:.15}50%{opacity:.65}}
+@keyframes iw-paddle{0%{transform:rotate(-35deg) translateX(20px)}40%{transform:rotate(-35deg) translateX(20px)}55%{transform:rotate(8deg) translateX(-12px)}75%,100%{transform:rotate(-20deg) translateX(10px)}}
+@keyframes iw-impact{0%,49%{opacity:0}50%,72%{opacity:1}73%,100%{opacity:0}}
+@keyframes iw-bonk{0%,45%{transform:rotate(-8deg)}56%{transform:translateX(-7px) rotate(9deg) scaleX(.93)}75%{transform:translateX(3px) rotate(-5deg)}100%{transform:rotate(0)}}
+@keyframes iw-celebrate{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes iw-confetti{0%{transform:translateY(-12px);opacity:0}25%{opacity:1}100%{transform:translateY(25px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.workshop *{animation:none!important;transition:none!important}}

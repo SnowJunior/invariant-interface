@@ -1,0 +1,10 @@
+import { build } from 'esbuild';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { resolve, dirname } from 'node:path';
+await build({entryPoints:['dist/js/prototype3d.js'],outfile:'dist/3d.js',bundle:true,minify:true,format:'iife',target:['es2020'],legalComments:'inline'});
+const [html,css,js]=await Promise.all(['dist/3d.html','dist/3d.css','dist/3d.js'].map(p=>readFile(p,'utf8')));
+const standalone=html.replace('<link rel="stylesheet" href="./3d.css">',()=>`<style>${css}</style>`).replace('<script src="./3d.js" defer></script>',()=>`<script>${js.replaceAll('</script','<\\/script')}</script>`).replace('href="./index.html" id="originalLink"','href="./invariant-lab.html" id="originalLink"');
+const output=resolve(process.argv[2]??'standalone/invariant-lab-3d.html');
+await mkdir(dirname(output),{recursive:true});
+await writeFile(output,standalone);
+console.log(`3D standalone page: ${output}`);

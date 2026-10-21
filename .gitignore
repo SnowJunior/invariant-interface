@@ -1,0 +1,5 @@
+.DS_Store
+*.log
+node_modules/
+work/invariants-demo/node_modules/
+work/invariants-demo/standalone/
